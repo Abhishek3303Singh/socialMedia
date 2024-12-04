@@ -83,6 +83,7 @@ app.get("/my/profile/:id", async (req, res) => {
 //update my profile
 app.patch("/update/profile/:id", async (req, res) => {
   try {
+    console.log(req.params)
     const { id } = req.params;
     const data = req.body;
     const resData = await userModel.findByIdAndUpdate(id, data, {
